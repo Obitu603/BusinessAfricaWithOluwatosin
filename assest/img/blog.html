@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Africa Blog</title>
+    <link rel="icon" href="assest/img/logo.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #f39c12;
+            --accent: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(26, 82, 118, 0.95)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .admin-toggle:hover {
+            background-color: var(--secondary);
+        }
+
+        .admin-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        /* Blog Layout */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            margin-bottom: 60px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .featured-image {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-post:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .post-meta i {
+            margin-right: 5px;
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .live-indicator:before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--white);
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            font-weight: 500;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        .blog-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover .blog-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            background-color: rgba(255,255,255,0.9);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark);
+        }
+
+        .categories-list a:hover {
+            color: var(--secondary);
+        }
+
+        .category-count {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .recent-posts {
+            list-style: none;
+        }
+
+        .recent-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .recent-post-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .recent-post-date {
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Live Comments */
+        .live-comments {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .live-comments h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .live-comments h3 i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        .comments-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .comment {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: var(--light);
+            border-radius: 8px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .comment-time {
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .comment-text {
+            font-size: 0.9rem;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-family: 'Open Sans', sans-serif;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .comment-submit {
+            align-self: flex-end;
+            padding: 8px 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-submit:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: var(--white);
+        }
+
+        .newsletter h2:after {
+            background-color: var(--secondary);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .newsletter-btn {
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover, .pagination a.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input, .newsletter-btn {
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assest/img/logo.png" alt="Business Africa Logo" class="logo-img">
+                <!-- <div class="logo-text">Business<span>AFRICA</span></div> -->
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="interviews.html">Interviews</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="#" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Business Africa Blog</h1>
+            <p>Insights, strategies and success stories from African entrepreneurs</p>
+            <div class="counter">
+                <div class="counter-item">
+                    <div class="counter-number">156</div>
+                    <div class="counter-text">Articles Published</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">24.7k</div>
+                    <div class="counter-text">Monthly Readers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <div class="container">
+        <div class="admin-panel" id="adminPanel">
+            <h2>Admin Panel - Manage Blog Content</h2>
+            <form class="admin-form" id="blogForm">
+                <div class="form-group">
+                    <label class="form-label" for="postTitle">Post Title</label>
+                    <input type="text" id="postTitle" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="postAuthor">Author</label>
+                    <input type="text" id="postAuthor" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="postCategory">Category</label>
+                    <select id="postCategory" class="form-select" required>
+                        <option value="">Select Category</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Healthcare">Healthcare</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="postImage">Image URL</label>
+                    <input type="text" id="postImage" class="form-input" required>
+                </div>
+                <div class="form-group full-width">
+                    <label class="form-label" for="postExcerpt">Excerpt</label>
+                    <textarea id="postExcerpt" class="form-textarea" required></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label class="form-label" for="postContent">Content</label>
+                    <textarea id="postContent" class="form-textarea" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="clearForm">Clear</button>
+                    <button type="submit" class="btn" id="savePost">Publish Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Toggle -->
+    <div class="admin-toggle" id="adminToggle">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Featured Post -->
+                    <div class="featured-post">
+                        <div class="featured-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Featured Post">
+                        </div>
+                        <div class="featured-content">
+                            <span class="featured-badge">Featured</span>
+                            <h2>The Future of African Tech: 5 Startups to Watch in 2023</h2>
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> By David Okafor</span>
+                                <span><i class="far fa-calendar"></i> June 18, 2023</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                                <span class="live-indicator">LIVE</span>
+                            </div>
+                            <p>African technology startups are attracting unprecedented attention from global investors. In this comprehensive analysis, we explore five innovative companies that are poised for significant growth in the coming year, from fintech solutions to agritech innovations.</p>
+                            <a href="#" class="btn">Read Full Article</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="blog-grid" id="blogGrid">
+                        <!-- Blog posts will be dynamically added here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- About Widget -->
+                    <div class="sidebar-widget">
+                        <h3>About Our Blog</h3>
+                        <p>Business Africa Blog provides insights, strategies and success stories from African entrepreneurs. Our mission is to empower the next generation of business leaders across the continent.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="categories-list" id="categoriesList">
+                            <!-- Categories will be dynamically updated -->
+                        </ul>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul class="recent-posts" id="recentPosts">
+                            <!-- Recent posts will be dynamically added here -->
+                        </ul>
+                    </div>
+
+                    <!-- Live Comments Widget -->
+                    <div class="live-comments">
+                        <h3><i class="fas fa-comment-alt"></i> Live Comments</h3>
+                        <div class="comments-list" id="commentsList">
+                            <!-- Comments will be dynamically added here -->
+                        </div>
+                        <form class="comment-form" id="commentForm">
+                            <input type="text" class="comment-input" id="commentAuthor" placeholder="Your name" required>
+                            <textarea class="comment-input" id="commentText" placeholder="Join the conversation..." required></textarea>
+                            <button type="submit" class="comment-submit">Post Comment</button>
+                        </form>
+                    </div>
+
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Popular Tags</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag">Startups</a>
+                            <a href="#" class="tag">Innovation</a>
+                            <a href="#" class="tag">Funding</a>
+                            <a href="#" class="tag">Technology</a>
+                            <a href="#" class="tag">Agriculture</a>
+                            <a href="#" class="tag">Sustainability</a>
+                            <a href="#" class="tag">Leadership</a>
+                            <a href="#" class="tag">E-commerce</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest articles, insights, and success stories from African entrepreneurs.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Business Africa</h3>
+                    <p>Spotlighting entrepreneurs, sharing strategies, and telling Africa's business story with clarity & impact.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#mission">Our Mission</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="interviews.html">Interviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Entrepreneur Stories</a></li>
+                        <li><a href="#">Business Strategies</a></li>
+                        <li><a href="#">Industry Insights</a></li>
+                        <li><a href="#">Success Metrics</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@businessafrica.com</li>
+                        <li><i class="fas fa-globe"></i> www.businessafrica.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Business Africa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Blog Data Storage
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [
+            {
+                id: 1,
+                title: "Sustainable Business Practices in African Manufacturing",
+                author: "Sarah Johnson",
+                date: "June 15, 2023",
+                category: "Manufacturing",
+                image: "https://images.unsplash.com/photo-1551836026-d5c8c2a22305?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+                excerpt: "How forward-thinking manufacturers are implementing eco-friendly practices while maintaining profitability.",
+                content: "Full article content would go here...",
+                views: 1200,
+                comments: 24
+            },
+            {
+                id: 2,
+                title: "Navigating Funding Challenges as an African Entrepreneur",
+                author: "Michael Adebayo",
+                date: "June 8, 2023",
+                category: "Finance",
+                image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+                excerpt: "Practical advice for African business owners looking to secure funding and scale their operations.",
+                content: "Full article content would go here...",
+                views: 2800,
+                comments: 42
+            },
+            {
+                id: 3,
+                title: "Women in Leadership: Transforming African Businesses",
+                author: "Amina Diallo",
+                date: "May 30, 2023",
+                category: "Leadership",
+                image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+                excerpt: "Profiles of exceptional women leaders who are driving innovation and growth across various industries.",
+                content: "Full article content would go here...",
+                views: 3500,
+                comments: 67
+            },
+            {
+                id: 4,
+                title: "The Rise of Digital Marketplaces in East Africa",
+                author: "James Kariuki",
+                date: "May 22, 2023",
+                category: "Technology",
+                image: "https://images.unsplash.com/photo-1551836026-d5c8c2a22305?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+                excerpt: "How online platforms are connecting buyers and sellers, creating new economic opportunities.",
+                content: "Full article content would go here...",
+                views: 1900,
+                comments: 31
+            }
+        ];
+
+        // Comments Data Storage
+        let comments = JSON.parse(localStorage.getItem('blogComments')) || [
+            {
+                id: 1,
+                author: "Chinedu Okoro",
+                text: "This is a fantastic initiative! I've been following Business Africa for a while and the content keeps getting better.",
+                time: "2 hours ago"
+            },
+            {
+                id: 2,
+                author: "Fatima Bello",
+                text: "As a young entrepreneur in Nigeria, these insights are invaluable. Thank you for sharing!",
+                time: "45 minutes ago"
+            },
+            {
+                id: 3,
+                author: "Kwame Mensah",
+                text: "I'd love to see more content about sustainable agriculture practices in West Africa.",
+                time: "15 minutes ago"
+            }
+        ];
+
+        // Categories Data
+        let categories = {
+            "Technology": 24,
+            "Agriculture": 18,
+            "Finance": 32,
+            "Manufacturing": 15,
+            "Retail": 21,
+            "Healthcare": 12
+        };
+
+        // DOM Elements
+        const adminPanel = document.getElementById('adminPanel');
+        const adminToggle = document.getElementById('adminToggle');
+        const blogForm = document.getElementById('blogForm');
+        const clearForm = document.getElementById('clearForm');
+        const blogGrid = document.getElementById('blogGrid');
+        const categoriesList = document.getElementById('categoriesList');
+        const recentPosts = document.getElementById('recentPosts');
+        const commentsList = document.getElementById('commentsList');
+        const commentForm = document.getElementById('commentForm');
+
+        // Admin Panel Toggle
+        adminToggle.addEventListener('click', () => {
+            adminPanel.classList.toggle('active');
+        });
+
+        // Initialize Blog
+        function initBlog() {
+            renderBlogPosts();
+            updateCategories();
+            updateRecentPosts();
+            renderComments();
+        }
+
+        // Render Blog Posts
+        function renderBlogPosts() {
+            blogGrid.innerHTML = '';
+            
+            blogPosts.forEach(post => {
+                const blogCard = document.createElement('div');
+                blogCard.className = 'blog-card';
+                blogCard.innerHTML = `
+                    <div class="blog-image">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">${post.date}</div>
+                        <h3 class="blog-title">${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-eye"></i> ${post.views} views</span>
+                            <span><i class="far fa-comment"></i> ${post.comments} comments</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="blog-actions">
+                        <button class="action-btn edit-post" data-id="${post.id}">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn delete-post" data-id="${post.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                blogGrid.appendChild(blogCard);
+            });
+
+            // Add event listeners for edit and delete buttons
+            document.querySelectorAll('.edit-post').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const postId = parseInt(button.getAttribute('data-id'));
+                    editPost(postId);
+                });
+            });
+
+            document.querySelectorAll('.delete-post').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const postId = parseInt(button.getAttribute('data-id'));
+                    deletePost(postId);
+                });
+            });
+        }
+
+        // Update Categories
+        function updateCategories() {
+            categoriesList.innerHTML = '';
+            
+            // Update counts based on actual posts
+            const updatedCategories = {};
+            blogPosts.forEach(post => {
+                if (updatedCategories[post.category]) {
+                    updatedCategories[post.category]++;
+                } else {
+                    updatedCategories[post.category] = 1;
+                }
+            });
+            
+            for (const [category, count] of Object.entries(updatedCategories)) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="#">${category} <span class="category-count">${count}</span></a>
+                `;
+                categoriesList.appendChild(listItem);
+            }
+        }
+
+        // Update Recent Posts
+        function updateRecentPosts() {
+            recentPosts.innerHTML = '';
+            
+            // Get the 3 most recent posts
+            const recent = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+            
+            recent.forEach(post => {
+                const listItem = document.createElement('li');
+                listItem.className = 'recent-post';
+                listItem.innerHTML = `
+                    <div class="recent-post-image">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="recent-post-content">
+                        <h4>${post.title}</h4>
+                        <div class="recent-post-date">${post.date}</div>
+                    </div>
+                `;
+                recentPosts.appendChild(listItem);
+            });
+        }
+
+        // Render Comments
+        function renderComments() {
+            commentsList.innerHTML = '';
+            
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-author">${comment.author}</span>
+                        <span class="comment-time">${comment.time}</span>
+                    </div>
+                    <div class="comment-text">${comment.text}</div>
+                `;
+                commentsList.appendChild(commentElement);
+            });
+            
+            // Scroll to bottom of comments
+            commentsList.scrollTop = commentsList.scrollHeight;
+        }
+
+        // Add New Blog Post
+        blogForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const title = document.getElementById('postTitle').value;
+            const author = document.getElementById('postAuthor').value;
+            const category = document.getElementById('postCategory').value;
+            const image = document.getElementById('postImage').value;
+            const excerpt = document.getElementById('postExcerpt').value;
+            const content = document.getElementById('postContent').value;
+            
+            const newPost = {
+                id: blogPosts.length > 0 ? Math.max(...blogPosts.map(p => p.id)) + 1 : 1,
+                title,
+                author,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                category,
+                image,
+                excerpt,
+                content,
+                views: 0,
+                comments: 0
+            };
+            
+            blogPosts.unshift(newPost);
+            saveBlogData();
+            renderBlogPosts();
+            updateCategories();
+            updateRecentPosts();
+            
+            // Reset form
+            blogForm.reset();
+            
+            // Show success message
+            alert('Blog post published successfully!');
+        });
+
+        // Edit Blog Post
+        function editPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (post) {
+                document.getElementById('postTitle').value = post.title;
+                document.getElementById('postAuthor').value = post.author;
+                document.getElementById('postCategory').value = post.category;
+                document.getElementById('postImage').value = post.image;
+                document.getElementById('postExcerpt').value = post.excerpt;
+                document.getElementById('postContent').value = post.content;
+                
+                // Change form to update mode
+                const saveButton = document.getElementById('savePost');
+                saveButton.textContent = 'Update Post';
+                saveButton.onclick = (e) => {
+                    e.preventDefault();
+                    updatePost(postId);
+                };
+                
+                // Show admin panel
+                adminPanel.classList.add('active');
+            }
+        }
+
+        // Update Blog Post
+        function updatePost(postId) {
+            const postIndex = blogPosts.findIndex(p => p.id === postId);
+            if (postIndex !== -1) {
+                blogPosts[postIndex].title = document.getElementById('postTitle').value;
+                blogPosts[postIndex].author = document.getElementById('postAuthor').value;
+                blogPosts[postIndex].category = document.getElementById('postCategory').value;
+                blogPosts[postIndex].image = document.getElementById('postImage').value;
+                blogPosts[postIndex].excerpt = document.getElementById('postExcerpt').value;
+                blogPosts[postIndex].content = document.getElementById('postContent').value;
+                
+                saveBlogData();
+                renderBlogPosts();
+                updateCategories();
+                updateRecentPosts();
+                
+                // Reset form
+                blogForm.reset();
+                
+                // Reset button text
+                const saveButton = document.getElementById('savePost');
+                saveButton.textContent = 'Publish Post';
+                saveButton.onclick = null;
+                
+                alert('Blog post updated successfully!');
+            }
+        }
+
+        // Delete Blog Post
+        function deletePost(postId) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                blogPosts = blogPosts.filter(p => p.id !== postId);
+                saveBlogData();
+                renderBlogPosts();
+                updateCategories();
+                updateRecentPosts();
+                alert('Blog post deleted successfully!');
+            }
+        }
+
+        // Clear Form
+        clearForm.addEventListener('click', () => {
+            blogForm.reset();
+            const saveButton = document.getElementById('savePost');
+            saveButton.textContent = 'Publish Post';
+            saveButton.onclick = null;
+        });
+
+        // Add New Comment
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const author = document.getElementById('commentAuthor').value;
+            const text = document.getElementById('commentText').value;
+            
+            if (author && text) {
+                const newComment = {
+                    id: comments.length > 0 ? Math.max(...comments.map(c => c.id)) + 1 : 1,
+                    author,
+                    text,
+                    time: 'Just now'
+                };
+                
+                comments.push(newComment);
+                saveCommentData();
+                renderComments();
+                
+                // Reset form
+                document.getElementById('commentText').value = '';
+                
+                // Update comment count for the first blog post (for demo purposes)
+                if (blogPosts.length > 0) {
+                    blogPosts[0].comments++;
+                    saveBlogData();
+                    renderBlogPosts();
+                }
+            }
+        });
+
+        // Save Blog Data to LocalStorage
+        function saveBlogData() {
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+        }
+
+        // Save Comment Data to LocalStorage
+        function saveCommentData() {
+            localStorage.setItem('blogComments', JSON.stringify(comments));
+        }
+
+        // Simulate Real-time Comments (for demo purposes)
+        function simulateRealTimeComments() {
+            setInterval(() => {
+                if (Math.random() < 0.3) { // 30% chance every 10 seconds
+                    const names = ['Kofi Annan', 'Ngozi Adichie', 'Samuel Eto', 'Lupita Nyong', 'Trevor Noah'];
+                    const messages = [
+                        'Great content! Really enjoying these insights.',
+                        'As an entrepreneur in Kenya, this resonates with my experience.',
+                        'Would love to see more interviews with female founders.',
+                        'The African business landscape is changing so rapidly!',
+                        'This gives me hope for the future of African innovation.'
+                    ];
+                    
+                    const newComment = {
+                        id: comments.length > 0 ? Math.max(...comments.map(c => c.id)) + 1 : 1,
+                        author: names[Math.floor(Math.random() * names.length)],
+                        text: messages[Math.floor(Math.random() * messages.length)],
+                        time: 'Just now'
+                    };
+                    
+                    comments.push(newComment);
+                    saveCommentData();
+                    renderComments();
+                    
+                    // Update comment count for the first blog post (for demo purposes)
+                    if (blogPosts.length > 0) {
+                        blogPosts[0].comments++;
+                        saveBlogData();
+                        renderBlogPosts();
+                    }
+                }
+            }, 10000); // Check every 10 seconds
+        }
+
+        // Initialize the blog when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initBlog();
+            simulateRealTimeComments();
+            
+            // Counter Animation
+            function animateCounter() {
+                const counters = document.querySelectorAll('.counter-number');
+                const speed = 200;
+                
+                counters.forEach(counter => {
+                    const target = +counter.innerText;
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounter, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+            
+            animateCounter();
+        });
+    </script>
+</body>
+</html>
