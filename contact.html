@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Africa with Oluwatosin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+   <header>
+        <div class="container header-container">
+            <!-- <a href="#" class="logo">Business<span>AFRICA</span></a> -->
+             <div class="logo">
+                <img src="assest/img/african business logo.jpg" alt="" class="logo-img">
+             </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="interview.html">Interviews</a></li>
+                <!-- <li><a href="#b">Blog</a></li> -->
+                <li><a href="#" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="section-header">
+            <h1>Contact Business Africa with Oluwatosin</h1>
+            <p>Join us in documenting Africa's business stories and preserving entrepreneurial wisdom for future generations</p>
+        </div>
+        
+        <!-- <div class="mission-statement">
+            <h2>Our Mission</h2>
+            <p>To spotlight entrepreneurs, share strategies, and tell Africa's business story with clarity & impact. As a legacy project, we are committed to interviewing 1,000 African business owners within 5 years, preserving their wisdom and stories for the next generation of entrepreneurs.</p>
+            <p>We believe that by documenting these journeys, we can inspire the next wave of African business leaders and create a repository of knowledge that will benefit entrepreneurs for years to come.</p>
+        </div> -->
+        
+        <div class="contact-container">
+            <div class="map-container">
+                <div class="map-header">
+                    <h3>Our Focus: The African Continent</h3>
+                </div>
+                <div class="africa-map">
+                    <!-- African map image with interactive points -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg" alt="Map of Africa">
+                    <div class="map-overlay">
+                        <div class="map-point" style="top: 25%; left: 45%;" title="Nigeria">NG</div>
+                        <div class="map-point" style="top: 30%; left: 55%;" title="Egypt">EG</div>
+                        <div class="map-point" style="top: 45%; left: 55%;" title="Kenya">KE</div>
+                        <div class="map-point" style="top: 60%; left: 50%;" title="South Africa">ZA</div>
+                        <div class="map-point" style="top: 35%; left: 40%;" title="Ghana">GH</div>
+                    </div>
+                </div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--primary);"></div>
+                        <span>African Continent</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--secondary);"></div>
+                        <span>Entrepreneur Stories</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Share Your Story</h3>
+                    <p>Are you an African entrepreneur with a story to tell? We'd love to hear from you and potentially feature your journey.</p>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="nigeria">Nigeria</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="south-africa">South Africa</option>
+                            <option value="egypt">Egypt</option>
+                            <option value="other">Other African Country</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry</label>
+                        <select id="industry" name="industry" required>
+                            <option value="" disabled selected>Select your industry</option>
+                            <option value="technology">Technology</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="retail">Retail</option>
+                            <option value="services">Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Entrepreneurial Journey</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your business journey, challenges, successes, and lessons learned..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Your Story</button>
+                    
+                    <div class="form-footer">
+                        <p>By submitting, you agree to potentially be featured in our documentation of African business stories.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Map point interaction
+        document.querySelectorAll('.map-point').forEach(point => {
+            point.addEventListener('click', function() {
+                const country = this.getAttribute('title');
+                document.getElementById('country').value = country.toLowerCase().replace(' ', '-');
+                
+                // Scroll to form
+                document.querySelector('.form-container').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -62,3 +62,29 @@
        
         const counterSection = document.querySelector('.counter');
         observer.observe(counterSection);
+
+         document.addEventListener('DOMContentLoaded', function() {
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+            
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const blogCard = this.closest('.blog-card');
+                    const excerpt = blogCard.querySelector('.blog-excerpt');
+                    const fullContent = blogCard.querySelector('.blog-full-content');
+                    
+                    if (fullContent.classList.contains('show')) {
+                        // Collapse the content
+                        fullContent.classList.remove('show');
+                        excerpt.classList.remove('expanded');
+                        this.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                        this.classList.remove('expanded');
+                    } else {
+                        // Expand the content
+                        fullContent.classList.add('show');
+                        excerpt.classList.add('expanded');
+                        this.innerHTML = 'Read Less <i class="fas fa-chevron-down"></i>';
+                        this.classList.add('expanded');
+                    }
+                });
+            });
+        });

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAWO- Spotlighting African Entrepreneurs</title>
+      <link rel="icon" href="assest/img/logo.png" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -19,7 +20,10 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Business<span>AFRICA</span></a>
+            <!-- <a href="#" class="logo">Business<span>AFRICA</span></a> -->
+             <div class="logo">
+                <img src="assest/img/african business logo.jpg" alt="" class="logo-img">
+             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -29,7 +33,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#interviews">Interviews</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#" class="btn">Contact Us</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -58,6 +62,17 @@
         </div>
     </section>
 
+<section class="content" id="interviews">
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/9lxI8bxRsn4?si=dJVqkjKBvx_Gx-yH"
+        title="Business Africa with Oluwatosin YouTube Channel"
+        allowfullscreen>
+      </iframe>
+      
+    </div>
+  </section>
+
     <!-- Mission Section -->
     <section class="mission" id="mission">
         <div class="container">
@@ -74,6 +89,23 @@
             </div>
         </div>
     </section>
+    <section class="mission" id="mission">
+        <div class="container">
+            <h2>Our Vision</h2>
+            <div class="mission-content">
+                 <div class="mission-image">
+                    <img src="https://i.pinimg.com/736x/2c/19/3c/2c193c5b519aea34653737f04df13720.jpg" alt="African entrepreneurs">
+                </div>
+                <div class="mission-text">
+                    <p>To become Africa’s leading business podcast, inspiring a new generation of leaders, 
+                        entrepreneurs, and changemakers who will drive the continent’s growth and global 
+                        relevance — while building a lasting legacy by documenting the journeys of 1,000 
+                        entrepreneurs across Africa within 5 years.</p>
+                    <a href="#" class="btn btn-outline">Support Our Vision</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -84,15 +116,23 @@
                         <i class="fas fa-bullhorn"></i>
                     </div>
                     <h3>Who We Are</h3>
-                    <p>We are Africa's business voice telling stories that matter, from boardrooms to the streets. Our team of dedicated journalists and storytellers work tirelessly to bring you authentic narratives from across the continent.</p>
+                    <p>Business Africa with Oluwatosin is a dynamic podcast platform committed to 
+                        telling Africa’s business story. We exist to amplify the voices of entrepreneurs, 
+                        innovators, and thought leaders across the continent while offering practical insights, 
+                        authentic conversations, and inspiring narratives that shape the future of African business.</p>
                 </div>
                 <div class="about-card">
                     <div class="about-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>What We Do</h3>
-                    <p>We share insights, interviews & success stories that inspire and empower Africa's entrepreneurs. Through our platform, we connect business leaders, share knowledge, and foster growth across industries.</p>
+                    <p>We bring Africa’s business ecosystem closer to you through thought-provoking
+                         interviews, real-life success stories, and expert analyses. From boardrooms to
+                        marketplaces, we uncover opportunities, highlight challenges, and explore strategies 
+                        that are redefining industries across the continent. Our podcast is a hub for knowledge,
+                         networking, and growth for anyone passionate about Africa’s economic transformation.</p>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -108,24 +148,26 @@
                     <div class="swiper-slide">
                         <div class="interview-card">
                             <div class="interview-image">
-                                <img src="https://i.pinimg.com/736x/ad/01/f3/ad01f3730efb011e00b82a31c1f59976.jpg" alt="Entrepreneur">
+                                <img src="https://dial.global/wp-content/uploads/2025/02/Adeola-bio-photo-400x374.jpg" alt="Entrepreneur">
                             </div>
                             <div class="interview-content">
-                                <h3 class="interview-name">Amina Jalloh</h3>
-                                <p class="interview-company">EcoFarm Solutions</p>
-                                <p class="interview-excerpt">How a small agricultural startup transformed into a regional leader in sustainable farming practices.</p>
+                                <h3 class="interview-name">Adeola Bojuwaye</h3>
+                                <p class="interview-company">Manager, Nigeria Project Lead</p>
+                                <p class="interview-excerpt">We believe in putting people at the center of digital transformation.</p>
+                                 <a href="interview.html" class="read-more">Watch Full Video<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="interview-card">
                             <div class="interview-image">
-                                <img src="https://i.pinimg.com/736x/6e/63/58/6e6358ef349209617b2acd0f2f4125b6.jpg" alt="Entrepreneur">
+                                <img src="assest/img/prof.jpg" alt="Entrepreneur">
                             </div>
                             <div class="interview-content">
-                                <h3 class="interview-name">Kwame Osei</h3>
+                                <h3 class="interview-name">Prof.Tijjani Bashir Musa</h3>
                                 <p class="interview-company">TechBridge Africa</p>
                                 <p class="interview-excerpt">Bridging the digital divide through innovative technology solutions for rural communities.</p>
+                                <a href="interview.html" class="read-more">Watch Full Video<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -138,6 +180,7 @@
                                 <h3 class="interview-name">Fatima Diallo</h3>
                                 <p class="interview-company">Fashion Forward Dakar</p>
                                 <p class="interview-excerpt">Revolutionizing African fashion with sustainable practices and global appeal.</p>
+                                <a href="interview.html" class="read-more">Watch Full Video<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -150,6 +193,7 @@
                                 <h3 class="interview-name">David Nwankwo</h3>
                                 <p class="interview-company">Green Energy Solutions</p>
                                 <p class="interview-excerpt">Pioneering renewable energy solutions for off-grid communities in West Africa.</p>
+                                <a href="interview.html" class="read-more">Watch Full Video<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -160,7 +204,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="blog" id="blog">
+    <!-- <section class="blog" id="blog">
         <div class="container">
             <h2>Latest from Our Blog</h2>
             <p>Insights, strategies and success stories from African entrepreneurs</p>
@@ -174,7 +218,7 @@
                         <div class="blog-date">June 15, 2025</div>
                         <h3 class="blog-title">5 African Startups That Are Changing Their Industries</h3>
                         <p class="blog-excerpt">Discover how innovative African startups are disrupting traditional business models and creating new opportunities.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -185,7 +229,7 @@
                         <div class="blog-date">June 8, 2025</div>
                         <h3 class="blog-title">The Rise of Sustainable Business in Africa</h3>
                         <p class="blog-excerpt">How African entrepreneurs are leading the way in building businesses that are both profitable and sustainable.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -196,12 +240,73 @@
                         <div class="blog-date">May 30, 2025</div>
                         <h3 class="blog-title">Navigating Funding Challenges as an African Entrepreneur</h3>
                         <p class="blog-excerpt">Practical advice for African business owners looking to secure funding and scale their operations.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<section class="blog" id="blog">
+        <div class="container">
+            <h2>Latest from Our Blog</h2>
+            <p>Insights, strategies and success stories from African entrepreneurs</p>
+           
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.pinimg.com/1200x/18/c7/ee/18c7ee3c7fb068cff20c55d7eda9b3dd.jpg" alt="African startups">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">June 15, 2025</div>
+                        <h3 class="blog-title">5 African Startups That Are Changing Their Industries</h3>
+                        <p class="blog-excerpt">Discover how innovative African startups are disrupting traditional business models and creating new opportunities across the continent.</p>
+                        <div class="blog-full-content">
+                            <p>In recent years, Africa has witnessed an unprecedented surge in innovative startups that are reshaping entire industries. From fintech solutions that are bringing banking to the unbanked, to agritech platforms revolutionizing food production, these companies are proving that Africa is not just a consumer of technology but a creator as well.</p>
+                            <p>One standout example is Paystack from Nigeria, which was acquired by Stripe for over $200 million, demonstrating the global potential of African tech solutions. Another is Kenya's M-Pesa, which continues to transform financial inclusion across East Africa.</p>
+                            <p>These success stories highlight the immense potential of African entrepreneurship when supported by the right ecosystems, funding, and mentorship opportunities.</p>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.pinimg.com/1200x/ab/1b/e2/ab1be25fe892e76be1159202a4817e46.jpg" alt="Sustainable business">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">June 8, 2025</div>
+                        <h3 class="blog-title">The Rise of Sustainable Business in Africa</h3>
+                        <p class="blog-excerpt">How African entrepreneurs are leading the way in building businesses that are both profitable and sustainable for future generations.</p>
+                        <div class="blog-full-content">
+                            <p>Sustainability is no longer just a buzzword in African business circles—it's becoming a core principle for a new generation of entrepreneurs. Across the continent, businesses are finding innovative ways to address environmental challenges while creating economic opportunities.</p>
+                            <p>In Ghana, companies like Kumasi Hive are promoting circular economy principles by turning plastic waste into valuable products. In South Africa, businesses are leading in renewable energy adoption, with solar power becoming increasingly accessible to both urban and rural communities.</p>
+                            <p>These sustainable business models not only protect Africa's rich natural resources but also create resilient economies that can withstand global challenges while providing meaningful employment for growing populations.</p>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.pinimg.com/1200x/26/d7/4c/26d74c14551830ed3365ac0399474096.jpg" alt="Funding challenges">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 30, 2025</div>
+                        <h3 class="blog-title">Navigating Funding Challenges as an African Entrepreneur</h3>
+                        <p class="blog-excerpt">Practical advice for African business owners looking to secure funding and scale their operations in a competitive landscape.</p>
+                        <div class="blog-full-content">
+                            <p>Access to capital remains one of the most significant hurdles for African entrepreneurs. While challenges persist, the funding landscape is gradually evolving with new opportunities emerging for determined business owners.</p>
+                            <p>Traditional bank loans are no longer the only option. African startups are increasingly attracting venture capital, angel investors, and participating in accelerator programs. Platforms like She Leads Africa and VC4A are connecting entrepreneurs with potential investors across the continent and beyond.</p>
+                            <p>Success in fundraising often comes down to three key factors: having a clear and scalable business model, building a strong team with diverse skills, and demonstrating deep understanding of your target market. Networking within entrepreneurial ecosystems and attending pitch events can also open doors to unexpected funding opportunities.</p>
+                            <p>Remember that rejection is part of the process—even the most successful African entrepreneurs faced multiple rejections before securing their breakthrough funding.</p>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Newsletter -->
     <section class="newsletter">
@@ -214,6 +319,32 @@
             </form>
         </div>
     </section>
+    <!-- Sponsor Section -->
+<div class="sponsor-section">
+    <div class="container">
+        <div class="sponsor-header">
+            <h2>Our Valued Partner</h2>
+            <p>Proudly supported by organizations that share our vision for African entrepreneurship</p>
+        </div>
+        
+        <div class="sponsor-grid">
+            <div class="sponsor-card">
+                <div class="sponsor-logo-container">
+                    <img src="assest/img/sponsor.jpg" alt="Africap Ventures Logo" class="sponsor-logo">
+                </div>
+                <div class="sponsor-info">
+                    <div class="sponsor-name">Crown Real Estate</div>
+                    <div class="sponsor-type">A genue and profound Company</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sponsor-cta">
+            <h3>Become Our Next Partner</h3>
+            <a href="#" class="sponsor-btn">Partner With Us</a>
+        </div>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer>
@@ -223,10 +354,11 @@
                     <h3>Business Africa</h3>
                     <p>Spotlighting entrepreneurs, sharing strategies, and telling Africa's business story with clarity & impact.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:businessafricawitholuwatosin@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://linkedin.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">

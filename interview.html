@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Africa with Oluwatosin</title>
+  <link rel="icon" href="assest/img/logo.png" type="image/x-icon">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+  <style>
+    /*:root {
+      --primary: #1a5276;
+      --secondary: #f39c12;
+      --accent: #2ecc71;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --text: #333333;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--white);
+    }
+
+    header {
+      background: var(--white);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+*/
+    header .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header img {
+      height: 55px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .hero h2 {
+      font-size: 2.3rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .content h3 {
+      color: var(--primary);
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .content p {
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Previous Videos Section */
+    .previous-videos {
+      padding: 2rem 1rem;
+      background: var(--white);
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .previous-videos h3 {
+      text-align: center;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: var(--light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    .video-info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .video-info h4 {
+      color: var(--dark);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .video-info p {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+  </style>
+</head>
+
+<body>
+ <header>
+        <div class="container header-container">
+            <!-- <a href="#" class="logo">Business<span>AFRICA</span></a> -->
+             <div class="logo">
+                <img src="assest/img/african business logo.jpg" alt="" class="logo-img">
+             </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="#mission">Mission</a></li>
+                <li><a href="#about">About</a></li> -->
+                <li><a href="#interviews">Interviews</a></li>
+                <!-- <li><a href="blog.html">Blog</a></li> -->
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+  <section class="hero" id="home">
+    <h2>Welcome to Business Africa with Oluwatosin</h2>
+    <p>
+      Join us as we explore inspiring stories, innovative ideas, and business growth strategies shaping the future of Africa.
+    </p>
+  </section>
+
+  <section class="content" id="interviews">
+    <h3><i class="fas fa-tv"></i> Latest Interview</h3>
+    <p>Watch our latest insightful discussions and inspiring conversations with top African business leaders and innovators.</p>
+    <div class="video-container">
+      <!-- Replace with your own YouTube video -->
+      <iframe
+        src="https://www.youtube.com/embed/9lxI8bxRsn4?si=dJVqkjKBvx_Gx-yH"
+        title="Business Africa with Oluwatosin YouTube Channel"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section class="previous-videos">
+    <h3><i class="fas fa-history"></i> Previous Interviews</h3>
+    <div class="video-grid">
+      <!-- Replace each iframe src with your own previous videos -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/quAix8n6TrE?si=waKlCy_nrh5wfRqq" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with Adeola Bojuwaye</h4>
+          <p>Manager, Nigeria Project Lead</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with John Smith</h4>
+          <p>Innovation and Leadership in Africa</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with Dr. Amaka</h4>
+          <p>Women Driving Change Across Africa</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with Dr. Amaka</h4>
+          <p>Women Driving Change Across Africa</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with Dr. Amaka</h4>
+          <p>Women Driving Change Across Africa</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+        <div class="video-info">
+          <h4>Interview with Mr. Tunde</h4>
+          <p>Building Sustainable Businesses</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <footer>
+    <p>&copy; <span id="year"></span> Business Africa with Oluwatosin. All Rights Reserved.</p>
+    <p>
+      Visit our <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube Channel
+      </a>
+    </p>
+  </footer> -->
+
+   <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Business Africa</h3>
+                    <p>Spotlighting entrepreneurs, sharing strategies, and telling Africa's business story with clarity & impact.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@businessafricawitholuwatosin" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="interviews.html">Interviews</a></li>
+                        <!-- <li><a href="#blog">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Entrepreneur Stories</a></li>
+                        <li><a href="#">Business Strategies</a></li>
+                        <li><a href="#">Industry Insights</a></li>
+                        <li><a href="#">Success Metrics</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@businessafrica.com</li>
+                        <li><i class="fas fa-globe"></i> www.businessafrica.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Business Africa With Oluwatosin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+     <script src="script.js"></script>
+ 
+</body>
+</html>

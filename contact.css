@@ -1,0 +1,496 @@
+/* Contact Section Styles */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h1 {
+            color: var(--primary);
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .section-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 800px;
+            margin: 30px auto 0;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--dark);
+            opacity: 0.9;
+        }
+
+        .mission-statement {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            border-left: 6px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .mission-statement:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .mission-statement h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mission-statement h2::before {
+            content: "🎯";
+            font-size: 1.5rem;
+        }
+
+        .mission-statement p {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .mission-statement p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: stretch;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .map-header {
+            background: linear-gradient(135deg, var(--primary), #2c3e50);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .map-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            gap: 10px;
+        }
+
+        .map-header h3::before {
+            content: "";
+        }
+
+        .africa-map {
+            flex: 1;
+            background: linear-gradient(to bottom right, #e8f4f8, #d4e7f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            min-height: 350px;
+            position: relative;
+        }
+
+        .africa-map img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .map-point {
+            width: 44px;
+            height: 44px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            font-size: 0.85rem;
+        }
+
+        .map-point:hover {
+            transform: scale(1.25);
+            background-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            padding: 0 15px 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-header h3::before {
+            content: "";
+        }
+
+        .form-header p {
+            color: var(--dark);
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 25px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #fafafa;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.15);
+            background-color: var(--white);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), #2c3e50);
+            color: var(--white);
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(26, 82, 118, 0.2);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #2c3e50, var(--primary));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 82, 118, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .form-footer {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            text-align: center;
+            opacity: 0.8;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .contact-section {
+                padding: 70px 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                gap: 40px;
+            }
+            
+            .mission-statement {
+                padding: 35px;
+            }
+            
+            .form-container {
+                padding: 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 20px;
+            }
+            
+            .section-header {
+                margin-bottom: 50px;
+            }
+            
+            .section-header h1::after {
+                width: 80px;
+            }
+            
+            .mission-statement {
+                padding: 30px 25px;
+                margin-bottom: 40px;
+            }
+            
+            .mission-statement h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .map-container, .form-container {
+                min-width: 100%;
+            }
+            
+            .africa-map {
+                min-height: 300px;
+                padding: 20px;
+            }
+            
+            .map-overlay {
+                padding: 20px;
+            }
+            
+            .map-point {
+                width: 38px;
+                height: 38px;
+                font-size: 0.8rem;
+            }
+            
+            .form-container {
+                padding: 30px 25px;
+            }
+            
+            .form-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-form input,
+            .contact-form textarea,
+            .contact-form select {
+                padding: 13px 16px;
+            }
+            
+            .submit-btn {
+                padding: 15px 28px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 50px 15px;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .mission-statement {
+                padding: 25px 20px;
+                margin-bottom: 35px;
+            }
+            
+            .mission-statement h2 {
+                font-size: 1.4rem;
+            }
+            
+            .mission-statement p {
+                font-size: 1rem;
+            }
+            
+            .africa-map {
+                min-height: 250px;
+                padding: 15px;
+            }
+            
+            .map-overlay {
+                padding: 15px;
+            }
+            
+            .map-point {
+                width: 32px;
+                height: 32px;
+                font-size: 0.75rem;
+            }
+            
+            .map-legend {
+                gap: 15px;
+                margin-top: 15px;
+            }
+            
+            .form-container {
+                padding: 25px 20px;
+            }
+            
+            .form-header {
+                margin-bottom: 25px;
+            }
+            
+            .form-header h3 {
+                font-size: 1.4rem;
+            }
+            
+            .contact-form .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .contact-form input,
+            .contact-form textarea,
+            .contact-form select {
+                padding: 12px 14px;
+            }
+            
+            .submit-btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
+            
+            .form-footer {
+                margin-top: 20px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .map-point {
+                width: 28px;
+                height: 28px;
+                font-size: 0.7rem;
+            }
+            
+            .legend-item {
+                font-size: 0.8rem;
+            }
+            
+            .legend-color {
+                width: 14px;
+                height: 14px;
+            }
+        }
